@@ -10,7 +10,7 @@ class ProductTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_can_fetch_all_products()
+    public function it_can_fetch_all_products(): void
     {
         $this->get(route('products.index'))
             ->assertStatus(200)
@@ -18,7 +18,7 @@ class ProductTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_a_product()
+    public function it_can_create_a_product(): void
     {
         $data = [
             'name' => 'Laptop',
@@ -32,7 +32,7 @@ class ProductTest extends TestCase
     }
 
     /** @test */
-    public function it_can_show_a_product()
+    public function it_can_show_a_product(): void
     {
         $product = Product::factory()->create();
 
