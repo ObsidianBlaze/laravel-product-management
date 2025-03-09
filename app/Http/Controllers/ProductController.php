@@ -25,6 +25,14 @@ class ProductController extends Controller
      *       "status": "available",
      *       "created_at": "2025-03-09T12:00:00.000000Z",
      *       "updated_at": "2025-03-09T12:00:00.000000Z"
+     *     },
+     *     {
+     *       "id": 2,
+     *       "name": "Laptop",
+     *       "category": "Electronics",
+     *       "status": "unavailable",
+     *       "created_at": "2025-03-09T12:05:00.000000Z",
+     *       "updated_at": "2025-03-09T12:05:00.000000Z"
      *     }
      *   ]
      * }
@@ -32,9 +40,7 @@ class ProductController extends Controller
     public function index(): AnonymousResourceCollection
     {
         return ProductResource::collection(Product::all());
-    }
-
-    /**
+    }   /**
      * Create a new product.
      *
      * @group Products
