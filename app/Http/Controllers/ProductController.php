@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -85,8 +86,13 @@ class ProductController extends Controller
      * }
      * @response 404 {"message": "Product not found"}
      */
-    public function show(Product $product): ProductResource
+    public function show($id): JsonResponse|ProductResource
     {
-        return new ProductResource($product);
+        try {
+            $product = Product::findOrFail($id);
+            return new ProductResource($product);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
     }
 }
