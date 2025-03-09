@@ -40,13 +40,13 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, \Exception|Throwable $exception)
+    public function render($request, \Exception|Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
     {
-        if ($exception instanceof ModelNotFoundException) {
+        if ($e instanceof ModelNotFoundException) {
             return response()->json([
                 'message' => 'Product not found!',
             ], 404);
         }
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
     }
 }
