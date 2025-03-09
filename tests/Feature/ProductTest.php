@@ -83,7 +83,7 @@ class ProductTest extends TestCase
         $this->get(route('products.show', 5))
             ->assertStatus(404)
             ->assertJson([
-                'message' => 'Product not found',
+                'message' => 'Product not found!',
             ]);
     }
 }
