@@ -80,12 +80,10 @@ class ProductTest extends TestCase
     /** @test */
     public function it_can_return_404_if_product_not_found(): void
     {
-        $res = $this->get(route('products.show', 99))
-            ->assertStatus(404);
-
-        dd($res->getContent());
-//            ->assertJson([
-//                'message' => 'Product not found',
-//            ]);
+        $this->get(route('products.show', 5))
+            ->assertStatus(404)
+            ->assertJson([
+                'message' => 'Product not found',
+            ]);
     }
 }
