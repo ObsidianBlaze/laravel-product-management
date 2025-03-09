@@ -1,9 +1,9 @@
 # Introduction
 
-
+This API allows users to manage products including listing, creating, and viewing them.
 
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 
     This documentation aims to provide all the information you need to work with our API.

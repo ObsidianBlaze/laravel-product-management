@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel API Documentation</title>
+    <title>Product API Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -66,19 +66,19 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
+                    <ul id="tocify-header-products" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="products">
+                    <a href="#products">Products</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-products">
-                                <a href="#endpoints-GETapi-products">Display a listing of the resource.</a>
+                                    <ul id="tocify-subheader-products" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="products-GETapi-products">
+                                <a href="#products-GETapi-products">List all products.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-products">
-                                <a href="#endpoints-POSTapi-products">Store a newly created resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="products-POSTapi-products">
+                                <a href="#products-POSTapi-products">Create a new product.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-products--id-">
-                                <a href="#endpoints-GETapi-products--id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-products--id-">
+                                <a href="#products-GETapi-products--id-">Show a product.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -99,8 +99,9 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
+<p>This API allows users to manage products including listing, creating, and viewing them.</p>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -110,16 +111,16 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="products">Products</h1>
 
     
 
-                                <h2 id="endpoints-GETapi-products">Display a listing of the resource.</h2>
+                                <h2 id="products-GETapi-products">List all products.</h2>
 
 <p>
 </p>
 
-
+<p>Returns a list of all available products.</p>
 
 <span id="example-requests-GETapi-products">
 <blockquote>Example request:</blockquote>
@@ -127,14 +128,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/products" \
+    --get "http://localhost:8000/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products"
+    "http://localhost:8000/api/products"
 );
 
 const headers = {
@@ -153,18 +154,16 @@ fetch(url, {
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
-<code class="language-json" style="max-height: 300px;">[]</code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Keyboard&quot;,
+    &quot;category&quot;: &quot;Electronics&quot;,
+    &quot;status&quot;: &quot;available&quot;,
+    &quot;created_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-products" hidden>
@@ -238,7 +237,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-products">Store a newly created resource in storage.</h2>
+                    <h2 id="products-POSTapi-products">Create a new product.</h2>
 
 <p>
 </p>
@@ -251,20 +250,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/products" \
+    "http://localhost:8000/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"category\": \"amniihfqcoynlazghdtqt\",
-    \"status\": \"available\"
+    \"name\": \"\\\"Samsung\\\"\",
+    \"category\": \"\\\"Electronics\\\"\",
+    \"status\": \"\\\"available\\\"\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products"
+    "http://localhost:8000/api/products"
 );
 
 const headers = {
@@ -273,9 +272,9 @@ const headers = {
 };
 
 let body = {
-    "name": "vmqeopfuudtdsufvyvddq",
-    "category": "amniihfqcoynlazghdtqt",
-    "status": "available"
+    "name": "\"Samsung\"",
+    "category": "\"Electronics\"",
+    "status": "\"available\""
 };
 
 fetch(url, {
@@ -287,7 +286,21 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-products">
-</span>
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Samsung&quot;,
+    &quot;category&quot;: &quot;Electronics&quot;,
+    &quot;status&quot;: &quot;available&quot;,
+    &quot;created_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-products" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-products"></span>:
@@ -364,10 +377,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-products"
-               value="vmqeopfuudtdsufvyvddq"
+               value=""Samsung""
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>The name of the product. Example: <code>"Samsung"</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
@@ -375,10 +388,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="category"                data-endpoint="POSTapi-products"
-               value="amniihfqcoynlazghdtqt"
+               value=""Electronics""
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>amniihfqcoynlazghdtqt</code></p>
+<p>The product category. Example: <code>"Electronics"</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -386,21 +399,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-products"
-               value="available"
+               value=""available""
                data-component="body">
     <br>
-<p>Example: <code>available</code></p>
-Must be one of:
-<ul style="list-style-type: square;"><li><code>available</code></li> <li><code>unavailable</code></li></ul>
+<p>The product status (available/unavailable). Example: <code>"available"</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-products--id-">Display the specified resource.</h2>
+                    <h2 id="products-GETapi-products--id-">Show a product.</h2>
 
 <p>
 </p>
 
-
+<p>Fetches details of a specific product by ID.</p>
 
 <span id="example-requests-GETapi-products--id-">
 <blockquote>Example request:</blockquote>
@@ -408,14 +419,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/products/17" \
+    --get "http://localhost:8000/api/products/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/17"
+    "http://localhost:8000/api/products/1"
 );
 
 const headers = {
@@ -432,21 +443,26 @@ fetch(url, {
 
 <span id="example-responses-GETapi-products--id-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Product] 17&quot;
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Redmi&quot;,
+    &quot;category&quot;: &quot;Electronics&quot;,
+    &quot;status&quot;: &quot;available&quot;,
+    &quot;created_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-03-09T12:00:00.000000Z&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Product not found&quot;
 }</code>
  </pre>
     </span>
@@ -526,10 +542,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-products--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>17</code></p>
+<p>The ID of the product. Example: <code>1</code></p>
             </div>
                     </form>
 
