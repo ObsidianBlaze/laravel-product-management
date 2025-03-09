@@ -1,6 +1,7 @@
 <?php
 namespace Tests\Feature;
 
+use App\Enums\ProductStatusEnum;
 use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -23,7 +24,7 @@ class ProductTest extends TestCase
         $data = [
             'name' => 'Laptop',
             'category' => 'Electronics',
-            'status' => 'available',
+            'status' => ProductStatusEnum::AVAILABLE(),
         ];
 
         $this->postJson(route('products.store'), $data)
@@ -41,6 +42,16 @@ class ProductTest extends TestCase
             ->assertJson([
                 'id' => $product->id,
                 'name' => $product->name,
+            ]);
+    }
+
+    /** @test */
+    public function it_can_return_404_if_product_not_found(): void
+    {
+        $this->get(route('products.show', 99))
+        ->assertStatus(404)
+            ->assertJson([
+                'message' => 'Product not found',
             ]);
     }
 }
