@@ -83,7 +83,7 @@ class ProductController extends Controller
      *     "updated_at": "2025-03-09T12:00:00.000000Z"
      *   }
      * }
-     * @response 404 {"message": "Product not found"}
+     * @response 404 {"message": "Product not found!"}
      */
     public function show(Product $product): ProductResource
     {
