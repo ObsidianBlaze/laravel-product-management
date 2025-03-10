@@ -16,6 +16,28 @@
 (Note: If you log into filament with regular user credentials, you can only view products. However, if you log in as an
 Admin, you can view, create, delete, and edit.)
 
+
+---
+
+## Live URL
+
+
+```
+https://laravel-product-management-main-v8ebgm.laravel.cloud/
+```
+
+View the generated live documentation at:
+
+```
+https://laravel-product-management-main-v8ebgm.laravel.cloud/docs
+```
+
+View the live admin dashboard at:
+
+```
+https://laravel-product-management-main-v8ebgm.laravel.cloud/admin
+```
+
 ---
 
 ## Installation
