@@ -42,6 +42,15 @@
    ```
 (Note: You can't log into filament without running migrations and seeders first.)
 
+
+5. **Generate App Key:**
+   ```sh
+   php artisan key:generate
+   ```
+   ```sh
+   php artisan optimize:clear
+   ```
+   
 ---
 
 ## Running Tests
