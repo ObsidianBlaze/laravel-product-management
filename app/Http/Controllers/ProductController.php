@@ -39,7 +39,7 @@ class ProductController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return ProductResource::collection(Product::all());
+        return ProductResource::collection(Product::paginate(10));
     }
 
     /**
