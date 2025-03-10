@@ -11,7 +11,7 @@ class ProductMigrationTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_can_test_products_table_has_expected_columns()
+    public function it_can_test_products_table_has_expected_columns(): void
     {
         $this->assertTrue(Schema::hasTable('products'));
 
