@@ -38,7 +38,7 @@
 
 4. **Run database migrations with seed data:**
    ```sh
-   php artisan migrate:fresh --seed
+   php artisan migrate --seed
    ```
 (Note: You can't log into filament without running migrations and seeders first.)
 
