@@ -5,12 +5,11 @@ namespace Tests\Feature;
 use App\Enums\ProductStatusEnum;
 use App\Models\Product;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     /** @test */
     public function it_can_fetch_all_products(): void
