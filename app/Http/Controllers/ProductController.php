@@ -40,7 +40,9 @@ class ProductController extends Controller
     public function index(): AnonymousResourceCollection
     {
         return ProductResource::collection(Product::all());
-    }   /**
+    }
+
+    /**
      * Create a new product.
      *
      * @group Products
