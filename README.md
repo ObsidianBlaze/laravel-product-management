@@ -8,6 +8,8 @@
 | Laravel         | ^9.0    |
 | Database Name   | `product_db` |
 | Testing Database Name | `product_db_testing` |
+| Filament Email   | `admin@example.com` |
+| Filament Password | `password` |
 
 ---
 
@@ -34,6 +36,7 @@
    ```sh
    php artisan migrate:fresh --seed
    ```
+(Note: You can't log into filament without running migrations and seeders first.)
 
 ---
 
