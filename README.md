@@ -53,11 +53,17 @@ php artisan test
 ```
 
 Run specific tests:
+   
+API tests:
 
 ```sh
 php artisan test --filter ProductMigrationTest[Test product migration]
 php artisan test --filter ProductTest[Test the product controller for store, show, and index]
 php artisan test --filter AddIsAdminColumnTest[Test to ensure new column is_admin works with migration]
+```
+
+Filament tests:
+```sh
 php artisan test --filter ProductResourceTest[Test permissions to ensure only admin can edit, create, and delete products]
 ```
 
