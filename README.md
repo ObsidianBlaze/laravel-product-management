@@ -13,7 +13,8 @@
 | Filament Regular User Email   | `user@example.com` |
 | Filament Regular User Password | `password` |
 
-(Note: If you log into filament with regular user credentials, you can only view products. However, if you log in as an Admin, you can view, create, delete, and edit.)
+(Note: If you log into filament with regular user credentials, you can only view products. However, if you log in as an
+Admin, you can view, create, delete, and edit.)
 
 ---
 
@@ -33,18 +34,20 @@
 3. **Create environment files:**
    ```sh
    cp .env.example .env
+   ```
+   ```sh 
    cp .env.example .env.testing
    ```
 
 4. **Run database migrations with seed data:**
    ```sh
-    php artisan migrate --env=testing   
+   php artisan migrate --env=testing   
    ```
    ```sh
    php artisan migrate --seed
    ```
-(Note: You can't log into filament without running migrations and seeders first.)
 
+(Note: You can't log into filament without running migrations and seeders first.)
 
 5. **Generate App Key:**
    ```sh
@@ -53,7 +56,7 @@
    ```sh
    php artisan optimize:clear
    ```
-   
+
 ---
 
 ## Running Tests
@@ -65,7 +68,7 @@ php artisan test
 ```
 
 Run specific tests:
-   
+
 API tests:
 
 ```sh
@@ -75,6 +78,7 @@ php artisan test --filter AddIsAdminColumnTest[Test to ensure new column is_admi
 ```
 
 Filament tests:
+
 ```sh
 php artisan test --filter ProductResourceTest[Test permissions to ensure only admin can edit, create, and delete products]
 ```
@@ -96,7 +100,6 @@ http://localhost:8000/docs
 ```
 
 (Note: The port number may vary depending on your Laravel project setup.)
-
 
 ## Admin Dashboard
 
