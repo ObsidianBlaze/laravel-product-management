@@ -77,3 +77,11 @@ http://localhost:8000/docs
 
 (Note: The port number may vary depending on your Laravel project setup.)
 
+
+## Admin Dashboard
+
+View the admin dashboard at:
+
+```
+http://localhost:8000/admin
+```
