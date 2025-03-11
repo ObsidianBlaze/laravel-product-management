@@ -13,7 +13,7 @@
 
 ---
 
-## Live URL
+## Production / Live URL
 
 
 ```
@@ -32,9 +32,23 @@ View the live admin dashboard at:
 https://laravel-product-management-main-v8ebgm.laravel.cloud/admin
 ```
 
+## API For Live Products Without Auth
+
+View all products:
+```
+https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products
+```
+
+View specific product:
+```
+https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products/{id}
+eg
+https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products/3
+```
+
 ---
 
-## Installation
+## Local Installation / Setup
 
 1. **Clone the repository:**
    ```sh
@@ -116,6 +130,20 @@ http://localhost:8000/docs
 ```
 
 (Note: The port number may vary depending on your Laravel project setup.)
+
+## API For Products Without Auth
+
+View all products:
+```
+http://localhost:8000/api/products
+```
+
+View specific product:
+```
+http://localhost:8000/api/products/{id}
+eg
+http://localhost:8000/api/products/3
+```
 
 ## Admin Dashboard
 
