@@ -10,12 +10,6 @@
 | Testing Database Name | `product_db_testing` |
 | Filament Admin User Email   | `admin@example.com` |
 | Filament Admin User Password | `password` |
-| Filament Regular User Email   | `user@example.com` |
-| Filament Regular User Password | `password` |
-
-(Note: If you log into filament with regular user credentials, you can only view products. However, if you log in as an
-Admin, you can view, create, delete, and edit.)
-
 
 ---
 
