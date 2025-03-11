@@ -18,15 +18,5 @@ class AdminUserSeeder extends Seeder
             'is_admin' => true,
             'email_verified_at' => now(),
         ]);
-
-        User::firstOrCreate(
-            ['email' => 'user@example.com'],
-            [
-                'name' => 'Regular User',
-                'password' => Hash::make('password'),
-                'is_admin' => false,
-                'email_verified_at' => now(),
-            ]
-        );
     }
 }
