@@ -14,13 +14,13 @@
         "laravel/tinker": "^2.7",
         "spatie/enum": "^3.13",
         "spatie/laravel-enum": "^3.2",
-        "fakerphp/faker": "^1.9.1",
         "knuckleswtf/scribe": "^5.1"
     },
     "require-dev": {
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "fakerphp/faker": "^1.9.1",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
