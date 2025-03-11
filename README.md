@@ -70,6 +70,10 @@ https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products/3
    ```
 
 4. **Run database migrations with seed data:**
+   
+   (Note:Rename your .env.testing database name to `product_db_testing`)
+   
+    Then run commands below:
    ```sh
    php artisan migrate --env=testing   
    ```
