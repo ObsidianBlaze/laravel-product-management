@@ -52,9 +52,6 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessFilament(): bool
     {
-        return $this->is_admin;
-//        return $this->is_admin && $this->hasVerifiedEmail();
-
-//        return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
+        return $this->isAdmin();
     }
 }
