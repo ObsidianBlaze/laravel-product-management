@@ -15,36 +15,7 @@
 
 ## Production / Live URL
 
-
-```
-https://laravel-product-management-main-v8ebgm.laravel.cloud/
-```
-
-View the generated live documentation at:
-
-```
-https://laravel-product-management-main-v8ebgm.laravel.cloud/docs
-```
-
-View the live admin dashboard at:
-
-```
-https://laravel-product-management-main-v8ebgm.laravel.cloud/admin
-```
-
-## API For Live Products Without Auth
-
-View all products:
-```
-https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products
-```
-
-View specific product:
-```
-https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products/{id}
-eg
-https://laravel-product-management-main-v8ebgm.laravel.cloud/api/products/3
-```
+[Laravel Product Management](https://laravel-product-management-main-v8ebgm.laravel.cloud)
 
 ---
 
@@ -130,7 +101,7 @@ php artisan scribe:generate
 View the generated documentation at:
 
 ```
-http://localhost:8000/docs
+{{base_url}}/docs
 ```
 
 (Note: The port number may vary depending on your Laravel project setup.)
@@ -139,14 +110,14 @@ http://localhost:8000/docs
 
 View all products:
 ```
-http://localhost:8000/api/products
+{{base_url}}/api/products
 ```
 
 View specific product:
 ```
-http://localhost:8000/api/products/{id}
+{{base_url}}/api/products/{id}
 eg
-http://localhost:8000/api/products/3
+{{base_url}}/api/products/3
 ```
 
 ## Admin Dashboard
@@ -154,5 +125,6 @@ http://localhost:8000/api/products/3
 View the admin dashboard at:
 
 ```
-http://localhost:8000/admin
+{{base_url}}/admin
 ```
+(Note: `base_url` can be `http://localhost:8000` or [Laravel Product Management](https://laravel-product-management-main-v8ebgm.laravel.cloud) depending on your environment, `local` or `production`.)
