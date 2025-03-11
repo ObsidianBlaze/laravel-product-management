@@ -16,7 +16,11 @@ return [
 
     // The base URL displayed in the docs.
     // If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
-    'base_url' => env('SCRIBE_BASE_URL', config('app.url')),
+//    'base_url' => env('SCRIBE_BASE_URL', config('app.url')),
+    'base_url' => app()->environment('production')
+        ? 'https://laravel-product-management-main-v8ebgm.laravel.cloud'
+        : env('SCRIBE_BASE_URL', config('app.url')),
+
 
     // Routes to include in the docs
     'routes' => [
